@@ -1,13 +1,26 @@
 from staff import Staff
+from program import Program
 
 
 class School(Staff):
-    def __init__(self, name, address, school, pay):
-        return super().__init__(name, address, school, pay)
+    def __init__(self, school):
+        self._school=school
+        self._program=[]
+        self._staff=[]
 
-    def addStaff(name, age)
-    newstaff=Staff(name,age) 
+    def addStaff(self, staffname): 
+        self._staff.append(staffname)
 
     
+    def addProgram(self, programName):
+        self._program.append(programName)
+
+    def sumOfPay(self):
+        total=0
+        for pay in self._staff:
+            total += pay._pay
+        return total
+
+
 
 

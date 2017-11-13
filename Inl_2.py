@@ -4,7 +4,11 @@ import unittest
 from person import Person
 from staff import Staff
 from student import Student
+from program import Program
+from school import School
 
+
+"""
 class TestPerson(unittest.TestCase):
     def test_person_01_constructor( self ):
         p = Person("Mark", "Min Gata 1")
@@ -81,9 +85,31 @@ class TestStaff(unittest.TestCase):
         p = Staff("Mark", "Min Gata 1", "Nackademin", 50)
         p.setPay( 125.66 )
         self.assertEqual( p.getPay(), 125.66 )
+"""
+Nackadmein=School("Nackademin")
 
-iot=Program("IOT")
-student1=iot.addstudent(dklsakfklsdkf)
+Iot=Program("IoT")
+Nackadmein.addProgram(Iot)
+
+
+studentx=Student("john", "gatan 12", "iot",17, 5000)
+studenty=Student("peter", "gatan 2", "iot",17, 5000)
+Iot.addStudent(studentx)
+Iot.addStudent(studenty)
+
+
+staff1=Staff("Mark", "Tomteboda 1", "Nackademin", 50 )
+Nackadmein.addStaff(staff1)
+
+totalFee=Iot.sumOfFee()
+totalpay=Nackadmein.sumOfPay()
+
+if totalFee > totalpay:
+    print("Skolan går med vinst")
+else:
+    print("Skolan går med fölust")
+
+
 
 
 if __name__ == '__main__':

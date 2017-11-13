@@ -25,6 +25,12 @@
     <Compile Include="person.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="program.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="school.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="staff.py">
       <SubType>Code</SubType>
     </Compile>

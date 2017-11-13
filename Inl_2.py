@@ -82,6 +82,8 @@ class TestStaff(unittest.TestCase):
         p.setPay( 125.66 )
         self.assertEqual( p.getPay(), 125.66 )
 
+iot=Program("IOT")
+student1=iot.addstudent(dklsakfklsdkf)
 
 
 if __name__ == '__main__':

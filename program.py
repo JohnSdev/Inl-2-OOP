@@ -2,16 +2,16 @@ from student import *
 
 class Program(Student):
     def __init__(self, program):
-        self.program=program
-        self.student=[]
+        self._program=program
+        self._student=[]
 
         
     def addStudent(self,name):
-        self.student.append(name)
+        self._student.append(name)
 
     def sumOfFee(self):
         total=0
-        for student in self.student:
+        for student in self._student:
             total += student.getFee()
         return total
 

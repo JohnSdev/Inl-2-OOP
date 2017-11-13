@@ -21,5 +21,5 @@ class Staff(Person):
         self._pay=float(pay)
 
     def __str__(self):
-        return "Staff[{0},school={1},pay={2:.2f}]".format(super().__str__(), self._school, self._pay)
+        return "Staff[{0},school={1},pay={2:.2f}]".format(super().__str__(), self.getSchool(), self.getPay())
     

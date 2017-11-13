@@ -8,7 +8,6 @@ from program import Program
 from school import School
 
 
-"""
 class TestPerson(unittest.TestCase):
     def test_person_01_constructor( self ):
         p = Person("Mark", "Min Gata 1")
@@ -85,32 +84,63 @@ class TestStaff(unittest.TestCase):
         p = Staff("Mark", "Min Gata 1", "Nackademin", 50)
         p.setPay( 125.66 )
         self.assertEqual( p.getPay(), 125.66 )
-"""
-Nackadmein=School("Nackademin")
 
-Iot=Program("IoT")
-Nackadmein.addProgram(Iot)
+ 
 
+class TestProfit(unittest.TestCase): #Tesf of profit. First is the som of pay and fee calculaled and then they are compared.
+    def test_profit_01_sumOfFee( self ):
+        Nackadmein=School("Nackademin")
+        studentx=Student("john", "gatan 12", "iot",17, 5000)
+        studenty=Student("peter", "gatan 2", "iot",17, 5000)
+        Iot=Program("IoT")
+        Iot.addStudent(studentx)
+        Iot.addStudent(studenty)
+        self.assertEqual( Iot.sumOfFee(), 10000 )
 
-studentx=Student("john", "gatan 12", "iot",17, 5000)
-studenty=Student("peter", "gatan 2", "iot",17, 5000)
-Iot.addStudent(studentx)
-Iot.addStudent(studenty)
+    def test_profit_02_sumOfPay( self ):
+        Nackadmein=School("Nackademin")
+        staff1=Staff("Mark", "Tomteboda 1", "Nackademin", 50 )
+        staff2=Staff("Pike", "Tomteboda 3", "Nackademin", 50 )
+        Nackadmein.addStaff(staff1)
+        Nackadmein.addStaff(staff2)
+        self.assertEqual( Nackadmein.sumOfPay(), 100 )
 
+    def test_profit_03_isProfit( self ):
 
-staff1=Staff("Mark", "Tomteboda 1", "Nackademin", 50 )
-Nackadmein.addStaff(staff1)
+        Nackadmein=School("Nackademin")
+        iot=Program("IoT")
+        Nackadmein.addProgram(iot) 
 
-totalFee=Iot.sumOfFee()
-totalpay=Nackadmein.sumOfPay()
+        studentx=Student("john", "gatan 12", "iot",17, 5000)
+        studenty=Student("peter", "gatan 2", "iot",17, 5000)
+        iot.addStudent(studentx)
+        iot.addStudent(studenty)
 
-if totalFee > totalpay:
-    print("Skolan går med vinst")
-else:
-    print("Skolan går med fölust")
+        staff1=Staff("Mark", "Tomteboda 1", "Nackademin", 50 )
+        staff2=Staff("Pike", "Tomteboda 3", "Nackademin", 50 )
+        Nackadmein.addStaff(staff1)
+        Nackadmein.addStaff(staff2)
 
+        self.assertGreater(iot.sumOfFee(), Nackadmein.sumOfPay(), "True")
 
+    def test_profit_04_notProfit( self ):
 
+        Nackadmein=School("Nackademin")
+        iot=Program("IoT")
+        Nackadmein.addProgram(iot) 
+
+        studentx=Student("john", "gatan 12", "iot",17, 5000)
+        studenty=Student("peter", "gatan 2", "iot",17, 5000)
+        iot.addStudent(studentx)
+        iot.addStudent(studenty)
+
+        staff1=Staff("Mark", "Tomteboda 1", "Nackademin", 50 )
+        staff2=Staff("Pike", "Tomteboda 3", "Nackademin", 50 )
+        Nackadmein.addStaff(staff1)
+        Nackadmein.addStaff(staff2)
+        self.assertLess(Nackadmein.sumOfPay(), iot.sumOfFee(), "True")
+        
+        
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

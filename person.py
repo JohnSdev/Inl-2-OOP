@@ -14,5 +14,5 @@ class Person:
         self._address=address
 
     def __str__(self):
-        return "Person[name={},address={}]".format(self.getName, self.getAddress)
+        return "Person[name={},address={}]".format(self.getName(), self.getAddress())
 

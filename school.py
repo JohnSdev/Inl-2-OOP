@@ -21,6 +21,10 @@ class School(Staff):
             total += pay._pay
         return total
 
+    def getProfit(self, sumPay, sumFee):
+        if sumFee > sumPay:
+            return True
+        return False 
 
 
 

@@ -121,7 +121,7 @@ class TestProfit(unittest.TestCase): #Tesf of profit. First is the som of pay an
         Nackadmein.addStaff(staff1)
         Nackadmein.addStaff(staff2)
 
-        self.assertGreater(iot.sumOfFee(), Nackadmein.sumOfPay(), "True")
+        self.assertEqual( Nackadmein.getProfit(Nackadmein.sumOfPay(), iot.sumOfFee()), True )
 
     def test_profit_04_notProfit( self ):
 
@@ -129,8 +129,8 @@ class TestProfit(unittest.TestCase): #Tesf of profit. First is the som of pay an
         iot=Program("IoT")
         Nackadmein.addProgram(iot) 
 
-        studentx=Student("john", "gatan 12", "iot",17, 5000)
-        studenty=Student("peter", "gatan 2", "iot",17, 5000)
+        studentx=Student("john", "gatan 12", "iot",17, 50)
+        studenty=Student("peter", "gatan 2", "iot",17, 50)
         iot.addStudent(studentx)
         iot.addStudent(studenty)
 
@@ -138,8 +138,7 @@ class TestProfit(unittest.TestCase): #Tesf of profit. First is the som of pay an
         staff2=Staff("Pike", "Tomteboda 3", "Nackademin", 50 )
         Nackadmein.addStaff(staff1)
         Nackadmein.addStaff(staff2)
-        self.assertLess(Nackadmein.sumOfPay(), iot.sumOfFee(), "True")
-        
+        self.assertEqual( Nackadmein.getProfit(Nackadmein.sumOfPay(), iot.sumOfFee()), False )
         
 
 if __name__ == '__main__':

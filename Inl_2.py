@@ -111,10 +111,12 @@ class TestProfit(unittest.TestCase): #Tesf of profit. First is the som of pay an
         iot=Program("IoT")
         Nackadmein.addProgram(iot) 
 
-        studentx=Student("john", "gatan 12", "iot",17, 5000)
-        studenty=Student("peter", "gatan 2", "iot",17, 5000)
-        iot.addStudent(studentx)
-        iot.addStudent(studenty)
+        studentA=Student("john", "gatan 12", "iot",17, 50)
+        studentB=Student("peter", "gatan 2", "iot",17, 50)
+        studentC=Student("pjotr", "gatan 2", "iot",17, 50)
+        iot.addStudent(studentA)
+        iot.addStudent(studentB)
+        iot.addStudent(studentC)
 
         staff1=Staff("Mark", "Tomteboda 1", "Nackademin", 50 )
         staff2=Staff("Pike", "Tomteboda 3", "Nackademin", 50 )
@@ -136,8 +138,11 @@ class TestProfit(unittest.TestCase): #Tesf of profit. First is the som of pay an
 
         staff1=Staff("Mark", "Tomteboda 1", "Nackademin", 50 )
         staff2=Staff("Pike", "Tomteboda 3", "Nackademin", 50 )
+        staff3=Staff("Moa", "Tomteboda 1", "Nackademin", 50 )
         Nackadmein.addStaff(staff1)
         Nackadmein.addStaff(staff2)
+        Nackadmein.addStaff(staff3)
+
         self.assertEqual( Nackadmein.getProfit(Nackadmein.sumOfPay(), iot.sumOfFee()), False )
         
 

@@ -21,6 +21,12 @@ class School(Staff):
             total += pay._pay
         return total
 
+    def totalFee(self):
+        total=0
+        for eachprogram in self._program:
+            total += eachprogram.sumOfFee()
+        return total
+
     def getProfit(self, sumPay, sumFee):
         if sumFee > sumPay:
             return True

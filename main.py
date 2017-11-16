@@ -129,12 +129,16 @@ class TestProfit(unittest.TestCase): #Tesf of profit. First is the som of pay an
 
         Nackadmein=School("Nackademin")
         iot=Program("IoT")
+        java=Program("Java")
         Nackadmein.addProgram(iot) 
+        Nackadmein.addProgram(java) 
 
         studentx=Student("john", "gatan 12", "iot",17, 50)
         studenty=Student("peter", "gatan 2", "iot",17, 50)
+        studentz=Student("peter", "gatan 2", "iot",17, 40)
         iot.addStudent(studentx)
         iot.addStudent(studenty)
+        java.addStudent(studentz)
 
         staff1=Staff("Mark", "Tomteboda 1", "Nackademin", 50 )
         staff2=Staff("Pike", "Tomteboda 3", "Nackademin", 50 )
@@ -143,7 +147,7 @@ class TestProfit(unittest.TestCase): #Tesf of profit. First is the som of pay an
         Nackadmein.addStaff(staff2)
         Nackadmein.addStaff(staff3)
 
-        self.assertEqual( Nackadmein.getProfit(Nackadmein.sumOfPay(), iot.sumOfFee()), False )
+        self.assertEqual( Nackadmein.getProfit(Nackadmein.sumOfPay(), Nackadmein.totalFee()), False )
         
 
 if __name__ == '__main__':
